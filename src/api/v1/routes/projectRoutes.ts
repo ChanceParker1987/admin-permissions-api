@@ -13,4 +13,32 @@ router.get(
     projectController.getAllProjects
 );
 
+router.get(
+    "/:id",
+    authenticate,
+    isAuthorized({ hasRole: ["admin", "lead", "developer"] }),
+    projectController.getProjectById
+);
+
+router.post(
+    "/",
+    authenticate,
+    isAuthorized({ hasRole: ["admin", "lead"] }),
+    projectController.createProject
+);
+
+router.put(
+    "/:id",
+    authenticate,
+    isAuthorized({ hasRole: ["admin", "lead"] }),
+    projectController.updateProject
+);
+
+router.delete(
+    "/:id",
+    authenticate,
+    isAuthorized({ hasRole: ["admin"] }),
+    projectController.deleteProject
+);
+
 export default router;
