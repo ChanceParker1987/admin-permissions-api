@@ -1,0 +1,18 @@
+node_modules/
+dist/
+
+.vscode/
+
+fir-03-24-9-2025-firebase-adminsdk-fbsvc-7732f85e64.json
+
+# Logs
+logs/
+*.log
+# Firebase credentials
+serviceAccountKey.json
+*firebase-adminsdk*.json
+
+# Environment configuration
+.env
+.env.*
+!.env.example
